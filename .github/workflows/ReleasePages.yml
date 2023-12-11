@@ -1,0 +1,32 @@
+name: Release Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Install and Build
+        run: |
+          npm install pnpm -g && \
+          pnpm install --no-frozen-lockfile && \
+          pnpm docs:build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: ./packages/.vitepress/dist
+          folder: dist
+          token: ${{ secrets.ACTIONS_DEPLOY_KEY }}

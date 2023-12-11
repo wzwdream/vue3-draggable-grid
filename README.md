@@ -2,7 +2,14 @@
 
 一个基于vue3+grid布局的网格拖拽布局，支持网格吸附、碰撞检测等。
 
-[演示文档]{}
+![NPM](https://img.shields.io/npm/l/vue3-draggable-grid)
+![npm bundle size (version)](https://img.shields.io/bundlephobia/min/vue3-draggable-grid/0.0.4)
+![npm](https://img.shields.io/npm/v/vue3-draggable-grid)
+![npm](https://img.shields.io/npm/dt/vue3-draggable-grid)
+
+
+
+[演示文档](https://wzwdream.github.io/vue3-draggable-grid/)
 
 ## ⭐️ 功能一览
 

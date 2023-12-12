@@ -121,9 +121,9 @@ export const getCollidingIndexes = (layout: Layout, item: LayoutItem): string[] 
  */
 export const collisionAvoidanceForItems = (layout: Layout, item: LayoutItem, col: number) => {
     let newLayout = deepClone(layout), x = item.x, y = item.y
-    const staticItem = getStaticItem(layout)
 
     // 避免与静态元素碰撞
+    const staticItem = getStaticItem(layout)
     if (collisionDetection(staticItem, item)) {
         const { x: x1, y: y1 } = avoidCollision(staticItem, item, col)
         x = x1
@@ -136,7 +136,6 @@ export const collisionAvoidanceForItems = (layout: Layout, item: LayoutItem, col
     // 根据项目id查找索引
     const { index } = findIndexById(newLayout, item.id)
     newLayout[index] = item
-
     // 碰撞检测
     if (collisionDetection(newLayout, item)) {
         const itemIds = getCollidingIndexes(newLayout, item)

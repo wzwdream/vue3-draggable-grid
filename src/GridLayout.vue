@@ -88,10 +88,13 @@ onMounted(() => {
  * 保证hook中的数据是最新数据
  */
 watchEffect(() => {
-    layoutdata.value = deepClone(checkLayout(props.data, Number(props.col)))
-    // 判断数据经过初始化后是否发生变化，如果发生变化能返回给父组件
-    if (JSON.stringify(layoutdata.value) !== JSON.stringify(props.data)) {
-        updateData()
+    // 拖拽中的数据不实时更新到外部，等拖拽结束在更新 ps: 会导致bug
+    if (!isDraging.value) {
+        layoutdata.value = deepClone(checkLayout(props.data, Number(props.col)))
+        // 判断数据经过初始化后是否发生变化，如果发生变化能返回给父组件
+        if (JSON.stringify(layoutdata.value) !== JSON.stringify(props.data)) {
+            updateData()
+        }
     }
     rowH.value = Number(props.rowH)
     col.value = Number(props.col)

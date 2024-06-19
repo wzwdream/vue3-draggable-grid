@@ -18,9 +18,9 @@ import {
   vShow,
   withCtx,
   withDirectives
-} from "./chunk-FTNFVJB3.js";
+} from "./chunk-MHLQE6UP.js";
 
-// node_modules/.pnpm/registry.npmmirror.com+@ruabick+vitepress-demo-block@0.3.3/node_modules/@ruabick/vitepress-demo-block/dist/vitepress-demo-block.js
+// node_modules/.pnpm/@ruabick+vitepress-demo-block@0.3.3/node_modules/@ruabick/vitepress-demo-block/dist/vitepress-demo-block.js
 var w = (e, o) => {
   const s = e.__vccOpts || e;
   for (const [l, n] of o)
